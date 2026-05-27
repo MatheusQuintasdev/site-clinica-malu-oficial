@@ -11,12 +11,14 @@ export default function CTAFooter() {
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
               Agende sua avaliação e realce sua melhor versão ✨
             </h2>
+
             <p className="text-lg text-muted-foreground">
               Nada melhor do que você se olhar e se sentir ainda mais linda. É só o começo!
             </p>
           </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            
+            <a
               href="https://wa.me/5514998499727"
               target="_blank"
               rel="noopener noreferrer"
@@ -35,35 +37,73 @@ export default function CTAFooter() {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" className="text-secondary">
-                  <path d="M20 5L12 15H28L20 5Z" fill="currentColor" opacity="0.8"/>
-                  <path d="M20 15L12 25H28L20 15Z" fill="currentColor"/>
+                  <path d="M20 5L12 15H28L20 5Z" fill="currentColor" opacity="0.8" />
+                  <path d="M20 15L12 25H28L20 15Z" fill="currentColor" />
                 </svg>
+
                 <div>
-                  <h3 className="text-sm font-serif font-semibold text-secondary">Malu</h3>
-                  <p className="text-xs text-background/70">Estética</p>
+                  <h3 className="text-sm font-serif font-semibold text-secondary">
+                    Malu
+                  </h3>
+                  <p className="text-xs text-background/70">
+                    Estética
+                  </p>
                 </div>
               </div>
-              <p className="text-sm text-background/80">Tratamentos estéticos premium para sua melhor versão.</p>
+
+              <p className="text-sm text-background/80">
+                Tratamentos estéticos premium para sua melhor versão.
+              </p>
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-semibold text-secondary">Navegação</h4>
+              <h4 className="font-semibold text-secondary">
+                Navegação
+              </h4>
+
               <ul className="space-y-2 text-sm text-background/80">
-                <li><a href="#sobre" className="hover:text-secondary transition-colors">Sobre</a></li>
-                <li><a href="#procedimentos" className="hover:text-secondary transition-colors">Procedimentos</a></li>
-                <li><a href="#resultados" className="hover:text-secondary transition-colors">Resultados</a></li>
-                <li><a href="#depoimentos" className="hover:text-secondary transition-colors">Depoimentos</a></li>
+                <li>
+                  <a href="#sobre" className="hover:text-secondary transition-colors">
+                    Sobre
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#procedimentos" className="hover:text-secondary transition-colors">
+                    Procedimentos
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#resultados" className="hover:text-secondary transition-colors">
+                    Resultados
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#depoimentos" className="hover:text-secondary transition-colors">
+                    Depoimentos
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-semibold text-secondary">Contato</h4>
+              <h4 className="font-semibold text-secondary">
+                Contato
+              </h4>
+
               <div className="space-y-2 text-sm text-background/80">
                 <div className="flex items-start gap-2">
-                  <MapPin size={18} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <MapPin
+                    size={18}
+                    className="text-secondary mt-0.5 flex-shrink-0"
+                  />
+
                   <span>Botucatu - SP, Brasil</span>
                 </div>
-                
+
+                <a
                   href="https://instagram.com/maluc.estetica"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -76,8 +116,11 @@ export default function CTAFooter() {
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-semibold text-secondary">Conecte-se</h4>
-              
+              <h4 className="font-semibold text-secondary">
+                Conecte-se
+              </h4>
+
+              <a
                 href="https://wa.me/5514998499727"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -98,7 +141,7 @@ export default function CTAFooter() {
         </div>
       </footer>
 
-      
+      <a
         href="https://wa.me/5514998499727"
         target="_blank"
         rel="noopener noreferrer"
