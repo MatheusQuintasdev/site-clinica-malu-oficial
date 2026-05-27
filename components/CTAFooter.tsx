@@ -135,7 +135,7 @@ export default function CTAFooter() {
           <div className="pt-8 border-t border-background/20">
             <div className="flex flex-col md:flex-row justify-between items-center text-sm text-background/70 gap-4">
               <p>&copy; 2026 Malu Carvalho Estética. Todos os direitos reservados.</p>
-              <p>Desenvolvido por @vortex.webstudio</p>
+              <p>Desenvolvido por @vortex.webdesign</p>
             </div>
           </div>
         </div>
