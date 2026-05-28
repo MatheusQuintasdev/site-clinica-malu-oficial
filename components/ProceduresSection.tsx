@@ -1,6 +1,6 @@
 'use client'
 
-import { Sparkles, Zap, Heart, Droplets, Smile, Wind } from 'lucide-react'
+import { Sparkles, Zap } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const procedures = [
@@ -10,29 +10,9 @@ const procedures = [
     description: 'Procedimento profundo que remove impurezas e deixa a pele radiante e renovada.'
   },
   {
-    icon: Smile,
-    title: 'Harmonização Facial',
-    description: 'Realce natural das features faciais com técnicas modernas e precisão.'
-  },
-  {
     icon: Zap,
-    title: 'Botox e Preenchimento',
-    description: 'Tratamentos anti-idade que mantêm a naturalidade e expressão facial.'
-  },
-  {
-    icon: Heart,
-    title: 'Tratamentos Corporais',
-    description: 'Procedimentos estéticos focados em corpo, celulite e tonificação.'
-  },
-  {
-    icon: Droplets,
-    title: 'Skinbooster',
-    description: 'Hidratação profunda com resultado natural e duradouro na pele.'
-  },
-  {
-    icon: Wind,
-    title: 'Bioestimuladores',
-    description: 'Estimulação de colágeno para resultados progressivos e naturais.'
+    title: 'Microagulhamento',
+    description: 'Técnica que estimula a produção de colágeno para renovação da pele e resultados naturais.'
   }
 ]
 
@@ -59,7 +39,6 @@ export default function ProceduresSection() {
 
   return (
     <section id="procedimentos" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/10 relative overflow-hidden">
-      {/* Background Elements */}
       <motion.div
         className="absolute -bottom-20 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"
         animate={{ y: [0, 40, 0], opacity: [0.2, 0.4, 0.2] }}
@@ -67,7 +46,6 @@ export default function ProceduresSection() {
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
         <motion.div
           className="text-center space-y-4 mb-20"
           initial={{ opacity: 0, y: 20 }}
@@ -80,13 +58,12 @@ export default function ProceduresSection() {
             Procedimentos <span className="text-primary">Premium</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Oferecemos uma completa linha de tratamentos estéticos personalizados para cada tipo de pele e objetivo.
+            Tratamentos estéticos personalizados para cada tipo de pele e objetivo.
           </p>
         </motion.div>
 
-        {/* Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -101,19 +78,6 @@ export default function ProceduresSection() {
                 whileHover={{ translateY: -6, boxShadow: '0 20px 40px rgba(82, 41, 41, 0.15)' }}
                 className="group relative p-8 bg-white/60 backdrop-blur-md border border-secondary/20 hover:border-secondary/40 rounded-2xl transition-all duration-300"
               >
-                {/* Glow effect on hover */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-secondary/0 to-accent/0 group-hover:from-secondary/15 group-hover:to-accent/15 rounded-2xl transition-all duration-300 -z-10"
-                  animate={{
-                    opacity: [0, 0.5, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                  }}
-                />
-
-                {/* Icon */}
                 <motion.div
                   className="p-4 bg-gradient-to-br from-secondary/30 to-accent/30 rounded-lg w-fit mb-4 group-hover:scale-110 transition-transform"
                   whileHover={{ rotate: 10 }}
@@ -121,7 +85,6 @@ export default function ProceduresSection() {
                   <Icon size={28} className="text-primary" />
                 </motion.div>
 
-                {/* Content */}
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                   {procedure.title}
                 </h3>
@@ -129,7 +92,6 @@ export default function ProceduresSection() {
                   {procedure.description}
                 </p>
 
-                {/* Hover indicator */}
                 <motion.div
                   className="flex items-center gap-2 text-sm font-semibold text-primary"
                   initial={{ opacity: 0, x: -10 }}
