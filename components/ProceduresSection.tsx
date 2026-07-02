@@ -1,6 +1,6 @@
 'use client'
 
-import { Sparkles, Zap } from 'lucide-react'
+import { Sparkles, Zap, Heart } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const procedures = [
@@ -13,6 +13,11 @@ const procedures = [
     icon: Zap,
     title: 'Microagulhamento',
     description: 'Técnica que estimula a produção de colágeno para renovação da pele e resultados naturais.'
+  },
+  {
+    icon: Heart,
+    title: 'Revitalização Facial',
+    description: 'Tratamento que revitaliza e rejuvenesce a pele, devolvendo luminosidade e vitalidade.'
   }
 ]
 
@@ -63,7 +68,7 @@ export default function ProceduresSection() {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto"
+          className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

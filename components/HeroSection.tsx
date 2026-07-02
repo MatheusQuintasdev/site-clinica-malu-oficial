@@ -69,7 +69,7 @@ export default function HeroSection() {
                 variants={itemVariants}
                 className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-lg"
               >
-                Tratamentos faciais e corporais de alta precisão, focados em autoestima, beleza natural e resultados duradouros.
+                Tratamentos faciais de alta precisão, focados em autoestima, beleza natural e resultados duradouros.
               </motion.p>
             </div>
 
