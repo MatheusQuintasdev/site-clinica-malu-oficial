@@ -1,47 +1,61 @@
 'use client'
 
-import { Sparkles, Zap, Heart } from 'lucide-react'
+import { Syringe, Sparkles, Droplets, Zap, Leaf, Wind, Eye } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const procedures = [
   {
     icon: Sparkles,
-    title: 'Limpeza de Pele',
-    description: 'Procedimento profundo que remove impurezas e deixa a pele radiante e renovada.'
+    title: 'Botox | Terço Superior',
+    description: 'Aplicação de toxina botulínica para suavizar linhas de expressão e proporcionar uma aparência mais descansada e harmônica, preservando a naturalidade.',
+    tag: 'Inclui retorno após 15 dias',
+    areas: null,
+  },
+  {
+    icon: Droplets,
+    title: 'Preenchimento Facial',
+    description: 'Procedimento realizado com ácido hialurônico para proporcionar mais harmonia, definição e equilíbrio aos contornos faciais.',
+    tag: null,
+    areas: ['Lábios', 'Mento', 'Malar', 'Mandíbula', 'Rinomodelação'],
+  },
+  {
+    icon: Leaf,
+    title: 'Bioestimulador | Elleva',
+    description: 'Tratamento que estimula a produção de colágeno, auxiliando na melhora da firmeza, sustentação e qualidade da pele, promovendo um rejuvenescimento gradual e natural.',
+    tag: null,
+    areas: null,
+  },
+  {
+    icon: Wind,
+    title: 'Fios de PDO',
+    description: 'Procedimento com fios de polidioxanona que auxilia na melhora da sustentação e firmeza da pele, além de estimular a produção de colágeno na região tratada.',
+    tag: null,
+    areas: null,
   },
   {
     icon: Zap,
-    title: 'Microagulhamento',
-    description: 'Técnica que estimula a produção de colágeno para renovação da pele e resultados naturais.'
+    title: 'Enzima Capilar',
+    description: 'Protocolo injetável desenvolvido para auxiliar no controle da queda capilar, regular o ciclo dos fios e estimular o crescimento, contribuindo para cabelos mais fortes e saudáveis.',
+    tag: null,
+    areas: null,
   },
   {
-    icon: Heart,
-    title: 'Revitalização Facial',
-    description: 'Tratamento que revitaliza e rejuvenesce a pele, devolvendo luminosidade e vitalidade.'
-  }
+    icon: Syringe,
+    title: 'Enzima Corporal',
+    description: 'Protocolos personalizados com aplicação de ativos conforme o objetivo de cada paciente, podendo ser direcionados para gordura localizada, protocolos intramusculares e suporte ao metabolismo.',
+    tag: null,
+    areas: null,
+  },
+  {
+    icon: Eye,
+    title: 'PEIM',
+    description: 'Procedimento estético injetável indicado para o tratamento de microvasos aparentes, buscando melhorar o aspecto da região tratada.',
+    tag: 'Requer avaliação prévia',
+    areas: null,
+  },
 ]
 
 export default function ProceduresSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
-  }
-
   return (
     <section id="procedimentos" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/10 relative overflow-hidden">
       <motion.div
@@ -63,61 +77,79 @@ export default function ProceduresSection() {
             Procedimentos <span className="text-primary">Premium</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Tratamentos estéticos personalizados para cada tipo de pele e objetivo.
+            Tratamentos estéticos personalizados para realçar sua beleza natural com segurança e precisão.
           </p>
         </motion.div>
 
-        <motion.div
-          className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {procedures.map((procedure, index) => {
             const Icon = procedure.icon
             return (
-              <motion.div
+              <div
                 key={index}
-                variants={itemVariants}
-                whileHover={{ translateY: -6, boxShadow: '0 20px 40px rgba(82, 41, 41, 0.15)' }}
-                className="group relative p-8 bg-white/60 backdrop-blur-md border border-secondary/20 hover:border-secondary/40 rounded-2xl transition-all duration-300"
+                className="group relative p-8 bg-white/60 backdrop-blur-md border border-secondary/20 hover:border-secondary/40 rounded-2xl transition-all duration-300 flex flex-col hover:-translate-y-1 hover:shadow-xl"
               >
-                <motion.div
-                  className="p-4 bg-gradient-to-br from-secondary/30 to-accent/30 rounded-lg w-fit mb-4 group-hover:scale-110 transition-transform"
-                  whileHover={{ rotate: 10 }}
-                >
-                  <Icon size={28} className="text-primary" />
-                </motion.div>
+                <div className="p-4 bg-gradient-to-br from-secondary/30 to-accent/30 rounded-lg w-fit mb-4 group-hover:scale-110 transition-transform">
+                  <Icon size={24} className="text-primary" />
+                </div>
 
-                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                   {procedure.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
                   {procedure.description}
                 </p>
 
-                <motion.div
-                  className="flex items-center gap-2 text-sm font-semibold text-primary"
-                  initial={{ opacity: 0, x: -10 }}
-                  whileHover={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3 }}
+                {procedure.areas && (
+                  <div className="mb-4">
+                    <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-2">Áreas disponíveis</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {procedure.areas.map((area) => (
+                        <span key={area} className="text-xs px-2.5 py-1 bg-secondary/15 text-primary rounded-full font-medium">
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {procedure.tag && (
+                  <p className="text-xs text-accent font-medium mb-4">{procedure.tag}</p>
+                )}
+
+                <a
+                  href="https://wa.me/5514998499727"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto text-sm font-semibold text-primary flex items-center gap-1.5 hover:gap-3 transition-all duration-300"
                 >
-                  Explorar mais
-                  <motion.svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
+                  Agendar consulta
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                  </motion.svg>
-                </motion.div>
-              </motion.div>
+                  </svg>
+                </a>
+              </div>
             )
           })}
+        </div>
+
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-muted-foreground text-sm mb-4">Dúvidas sobre qual procedimento é ideal para você?</p>
+          <a
+            href="https://wa.me/5514998499727"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-lg hover:shadow-lg transition-all hover:scale-105"
+          >
+            Falar com a Malu
+          </a>
         </motion.div>
       </div>
     </section>
