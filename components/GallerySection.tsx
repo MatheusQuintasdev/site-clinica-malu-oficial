@@ -6,33 +6,45 @@ import { X } from 'lucide-react'
 
 const galleryImages = [
   {
-    before: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados1-c248FvAOXkMgoq9C6MM4GTSmGYDyH0.jpg',
-    alt: 'Resultado antes e depois 1'
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados3-JzpjQ39wIqGpwUyDbS8nIutu6oHsiV.jpg',
+    alt: 'Resultado antes e depois'
   },
   {
-    before: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados2-9MI2ZgCtVzbfC9WTdj4Q5ZMCB2DxHt.jpg',
-    alt: 'Resultado antes e depois 2'
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados4-jNzIQW8GhBx7OOrROKEjaNDeXXdrFZ.jpg',
+    alt: 'Resultado antes e depois'
   },
   {
-    before: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados3-JzpjQ39wIqGpwUyDbS8nIutu6oHsiV.jpg',
-    alt: 'Resultado antes e depois 3'
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados5-9BbH5OXJS96Xv9OIgOYeL0pcZ4JnYz.jpg',
+    alt: 'Resultado antes e depois'
   },
   {
-    before: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados4-jNzIQW8GhBx7OOrROKEjaNDeXXdrFZ.jpg',
-    alt: 'Resultado antes e depois 4'
+    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados7-oLt8gIFRMOlHwvcNJEwrfSTDue9mhx.jpg',
+    alt: 'Resultado antes e depois'
   },
   {
-    before: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados5-9BbH5OXJS96Xv9OIgOYeL0pcZ4JnYz.jpg',
-    alt: 'Resultado antes e depois 5'
+    src: '/gallery/labial4.jpg',
+    alt: 'Preenchimento labial - antes e depois'
   },
   {
-    before: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados6-YO02wS0N2G9LHQZut2Y88QXVrXzc5R.jpg',
-    alt: 'Resultado antes e depois 6'
+    src: '/gallery/labial5.jpg',
+    alt: 'Preenchimento labial - antes e depois'
   },
   {
-    before: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados7-oLt8gIFRMOlHwvcNJEwrfSTDue9mhx.jpg',
-    alt: 'Resultado antes e depois 7'
-  }
+    src: '/gallery/labial1.jpg',
+    alt: 'Preenchimento labial - resultado'
+  },
+  {
+    src: '/gallery/mento1.jpg',
+    alt: 'Preenchimento de mento - antes e depois'
+  },
+  {
+    src: '/gallery/labial2.jpg',
+    alt: 'Preenchimento labial - resultado'
+  },
+  {
+    src: '/gallery/labial3.jpg',
+    alt: 'Preenchimento labial - resultado'
+  },
 ]
 
 export default function GallerySection() {
@@ -41,7 +53,6 @@ export default function GallerySection() {
   return (
     <section id="resultados" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground">
             Antes e Depois
@@ -51,21 +62,19 @@ export default function GallerySection() {
           </p>
         </div>
 
-        {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              onClick={() => setSelectedImage(image.before)}
+              onClick={() => setSelectedImage(image.src)}
               className="group relative overflow-hidden rounded-2xl cursor-pointer bg-muted/50 aspect-square"
             >
               <Image
-                src={image.before}
+                src={image.src}
                 alt={image.alt}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              {/* Overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity">
                   <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -80,10 +89,9 @@ export default function GallerySection() {
         </div>
       </div>
 
-      {/* Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 animate-fadeIn"
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
           onClick={() => setSelectedImage(null)}
         >
           <div
