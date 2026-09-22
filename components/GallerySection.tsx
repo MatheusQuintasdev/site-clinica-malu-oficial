@@ -18,10 +18,6 @@ const galleryImages = [
     alt: 'Resultado antes e depois'
   },
   {
-    src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/resultados7-oLt8gIFRMOlHwvcNJEwrfSTDue9mhx.jpg',
-    alt: 'Resultado antes e depois'
-  },
-  {
     src: '/gallery/labial4.jpg',
     alt: 'Preenchimento labial - antes e depois'
   },
